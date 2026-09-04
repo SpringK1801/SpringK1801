@@ -50,9 +50,9 @@ Small web games and Unity projects.
 
 <a href="https://playdailygame.com/">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-1-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-1-light.svg">
-    <img alt="PlayDailyGame — A website with a new game to play every day." src="./assets/generated/project-1-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-1-dark.svg?v=5ef340f3">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-1-light.svg?v=5ef340f3">
+    <img alt="PlayDailyGame — A website with a new game to play every day." src="./assets/generated/project-1-dark.svg?v=5ef340f3" width="100%">
   </picture>
 </a>
 
@@ -62,9 +62,9 @@ Small web games and Unity projects.
 
 <a href="https://proporto-website.vercel.app/">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-2-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-2-light.svg">
-    <img alt="PROPORTO — The website I built for PROPORTO, a civil engineering company in Porto." src="./assets/generated/project-2-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-2-dark.svg?v=1604a798">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-2-light.svg?v=1604a798">
+    <img alt="PROPORTO — The website I built for PROPORTO, a civil engineering company in Porto." src="./assets/generated/project-2-dark.svg?v=1604a798" width="100%">
   </picture>
 </a>
 
@@ -74,9 +74,9 @@ Small web games and Unity projects.
 
 <a href="https://caravelracing.com/">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-3-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-3-light.svg">
-    <img alt="Caravel Racing — The website I built for Caravel Racing, our STEM Racing team." src="./assets/generated/project-3-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-3-dark.svg?v=95fbffe8">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-3-light.svg?v=95fbffe8">
+    <img alt="Caravel Racing — The website I built for Caravel Racing, our STEM Racing team." src="./assets/generated/project-3-dark.svg?v=95fbffe8" width="100%">
   </picture>
 </a>
 
@@ -86,9 +86,9 @@ Small web games and Unity projects.
 
 <a href="https://www.curseforge.com/members/springk1801/projects">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-4-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-4-light.svg">
-    <img alt="Minecraft Mods — My Minecraft mods and add-ons, with more than 120K downloads on CurseForge." src="./assets/generated/project-4-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-4-dark.svg?v=3ae8026b">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-4-light.svg?v=3ae8026b">
+    <img alt="Minecraft Mods — My Minecraft mods and add-ons, with more than 120K downloads on CurseForge." src="./assets/generated/project-4-dark.svg?v=3ae8026b" width="100%">
   </picture>
 </a>
 

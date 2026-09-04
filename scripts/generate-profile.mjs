@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -152,6 +153,10 @@ function xml(value) {
 
 function markdown(value) {
   return String(value).replaceAll("|", "\\|").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+}
+
+function assetVersion(value) {
+  return createHash("sha256").update(JSON.stringify(value)).digest("hex").slice(0, 8);
 }
 
 function wrap(value, maxCharacters, maxLines = 3) {
@@ -492,14 +497,15 @@ function renderProjects(config) {
   const cards = projects.map((project, index) => {
     const primaryUrl = project.primaryUrl || project.websiteUrl || project.repositoryUrl;
     const primaryLabel = project.primaryLabel || (project.websiteUrl ? "Website" : "View project");
+    const version = assetVersion({ project, theme: config.theme });
     const repository = project.repositoryUrl && project.repositoryUrl !== primaryUrl
       ? ` · **[${markdown(project.repositoryLabel || "Source")} ↗](${project.repositoryUrl})**`
       : "";
     return `<a href="${primaryUrl}">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-${index + 1}-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-${index + 1}-light.svg">
-    <img alt="${markdown(project.name)} — ${markdown(project.description)}" src="./assets/generated/project-${index + 1}-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-${index + 1}-dark.svg?v=${version}">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-${index + 1}-light.svg?v=${version}">
+    <img alt="${markdown(project.name)} — ${markdown(project.description)}" src="./assets/generated/project-${index + 1}-dark.svg?v=${version}" width="100%">
   </picture>
 </a>
 

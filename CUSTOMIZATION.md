@@ -116,7 +116,7 @@ Projects render in the order used by `projects.featured`. Each entry supports:
 - `visible`: hide or show the card;
 - `owner` and `repo`: optional repository identity;
 - `name` and `icon`: public display values;
-- `logoPath`: optional PNG, JPEG or WebP inside the repository;
+- `logoPath`: optional SVG logo inside the repository;
 - `description`: custom card copy;
 - `primaryUrl` and `primaryLabel`: the main card link;
 - `repositoryUrl` and `repositoryLabel`: optional source-code link;
@@ -130,7 +130,7 @@ Example:
   "visible": true,
   "name": "My Project",
   "icon": "MP",
-  "logoPath": "assets/logos/my-project.png",
+  "logoPath": "assets/logos/my-project.svg",
   "description": "A concise, accurate description.",
   "primaryUrl": "https://example.com/",
   "primaryLabel": "Visit website",

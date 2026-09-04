@@ -110,12 +110,13 @@ function renderProjectLogo(project) {
     throw new Error(`Project logo must be inside the repository: ${project.logoPath}`);
   }
   if (!fs.existsSync(logoPath)) throw new Error(`Project logo not found: ${project.logoPath}`);
-  const extension = path.extname(logoPath).toLowerCase();
-  const mimeTypes = { ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" };
-  const mimeType = mimeTypes[extension];
-  if (!mimeType) throw new Error(`Unsupported project logo format: ${extension}`);
-  const data = fs.readFileSync(logoPath).toString("base64");
-  return `<image x="45" y="53" width="104" height="104" preserveAspectRatio="xMidYMid meet" href="data:${mimeType};base64,${data}"/>`;
+  if (path.extname(logoPath).toLowerCase() !== ".svg") {
+    throw new Error("Project logos must be SVG files so GitHub can render them inside the cards");
+  }
+  const source = fs.readFileSync(logoPath, "utf8");
+  const match = source.match(/<svg\b[^>]*viewBox=["']([^"']+)["'][^>]*>([\s\S]*?)<\/svg>\s*$/i);
+  if (!match) throw new Error(`Project logo needs an SVG viewBox: ${project.logoPath}`);
+  return `<svg x="45" y="53" width="104" height="104" viewBox="${xml(match[1])}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${match[2]}</svg>`;
 }
 
 function palette(mode) {

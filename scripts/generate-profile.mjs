@@ -100,6 +100,24 @@ function assertSafeUrl(value, label) {
   if (url.protocol !== "https:") throw new Error(`${label} must use https`);
 }
 
+function renderProjectLogo(project) {
+  if (!project.logoPath) {
+    return `<text x="97" y="123" text-anchor="middle" fill="currentColor" font-size="38" font-weight="900" letter-spacing="-2">${xml(project.icon || project.name.slice(0, 2).toUpperCase())}</text>`;
+  }
+  const logoPath = path.resolve(ROOT, project.logoPath);
+  const relative = path.relative(ROOT, logoPath);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error(`Project logo must be inside the repository: ${project.logoPath}`);
+  }
+  if (!fs.existsSync(logoPath)) throw new Error(`Project logo not found: ${project.logoPath}`);
+  const extension = path.extname(logoPath).toLowerCase();
+  const mimeTypes = { ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" };
+  const mimeType = mimeTypes[extension];
+  if (!mimeType) throw new Error(`Unsupported project logo format: ${extension}`);
+  const data = fs.readFileSync(logoPath).toString("base64");
+  return `<image x="45" y="53" width="104" height="104" preserveAspectRatio="xMidYMid meet" href="data:${mimeType};base64,${data}"/>`;
+}
+
 function palette(mode) {
   return mode === "dark"
     ? {
@@ -329,6 +347,7 @@ function renderStack(config, theme, mode) {
 
 function renderProject(project, theme, mode) {
   const colors = palette(mode);
+  const projectLogo = renderProjectLogo(project);
   const descriptionLines = wrap(project.description, 86, 3);
   const description = descriptionLines.map((line, index) => `<text x="198" y="${135 + index * 25}" fill="${colors.muted}" font-size="16">${xml(line)}</text>`).join("\n");
   let tagX = 198;
@@ -350,7 +369,7 @@ function renderProject(project, theme, mode) {
       <rect x="2" y="2" width="1096" height="300" rx="24" fill="url(#grid)" opacity="0.45"/>
       <rect x="34" y="42" width="126" height="126" rx="28" fill="${colors.surface}" stroke="${theme.secondary}" stroke-opacity="0.65"/>
       <rect x="51" y="59" width="92" height="92" rx="20" fill="url(#neon)" opacity="0.15"/>
-      <text x="97" y="123" text-anchor="middle" fill="${colors.text}" font-size="38" font-weight="900" letter-spacing="-2">${xml(project.icon || project.name.slice(0, 2).toUpperCase())}</text>
+      <g color="${colors.text}">${projectLogo}</g>
       <text x="198" y="61" fill="${theme.secondary}" font-size="12" font-weight="800" letter-spacing="2.2">PROJECT</text>
       <text x="198" y="104" fill="${colors.text}" font-size="32" font-weight="850">${xml(project.name)}</text>
       ${description}

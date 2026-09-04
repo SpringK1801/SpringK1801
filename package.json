@@ -1,0 +1,13 @@
+{
+  "name": "springk1801-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-profile.mjs",
+    "check": "node scripts/generate-profile.mjs --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

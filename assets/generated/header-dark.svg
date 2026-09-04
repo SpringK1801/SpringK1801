@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Spring — developer profile header</title>
+  <desc id="desc">Spring — developer profile header</desc>
+  <defs>
+    
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.48" stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="neon-soft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8B5CF6" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#06B6D4" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#EC4899" stop-opacity="0.25"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#2A2E55" stroke-width="1" opacity="0.38"/>
+    </pattern>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    
+      .orb-a { animation: drift-a 8s ease-in-out infinite; transform-origin: center; }
+      .orb-b { animation: drift-b 11s ease-in-out infinite; transform-origin: center; }
+      .signal { animation: signal 2.2s ease-in-out infinite; }
+      .type-line { opacity: 0; animation: type-cycle 12s ease-in-out infinite; }
+      .type-0 { animation-delay: 0s; }
+.type-1 { animation-delay: 3s; }
+.type-2 { animation-delay: 6s; }
+.type-3 { animation-delay: 9s; }
+      @keyframes drift-a { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(18px,-12px) scale(1.08); } }
+      @keyframes drift-b { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-22px,14px); } }
+      @keyframes signal { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+      @keyframes type-cycle { 0%,20% { opacity: 1; transform: translateY(0); } 24%,96% { opacity: 0; transform: translateY(5px); } 100% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) {
+        .orb-a,.orb-b,.signal,.type-line { animation: none !important; }
+        .type-line { opacity: 0; }
+        .type-0 { opacity: 1; }
+      }
+  </style>
+  
+      <rect x="1.5" y="1.5" width="1197" height="377" rx="28" fill="#070816" stroke="url(#neon)" stroke-width="3"/>
+      <rect x="2" y="2" width="1196" height="376" rx="27" fill="url(#grid)"/>
+      <path d="M0 310 C180 270 300 360 490 322 S810 270 1200 326 V380 H0Z" fill="url(#neon-soft)" opacity="0.6"/>
+      <circle class="orb-a" cx="164" cy="90" r="72" fill="#8B5CF6" opacity="0.13" filter="url(#glow)"/>
+      <circle class="orb-b" cx="1040" cy="245" r="86" fill="#EC4899" opacity="0.11" filter="url(#glow)"/>
+      <g opacity="0.85">
+        <rect x="70" y="62" width="13" height="13" fill="#06B6D4"/>
+        <rect x="87" y="62" width="7" height="7" fill="#8B5CF6"/>
+        <rect x="1106" y="68" width="12" height="12" fill="#EC4899"/>
+        <rect x="1122" y="84" width="6" height="6" fill="#06B6D4"/>
+      </g>
+      <text x="72" y="46" fill="#6F739D" font-size="12" font-weight="800" letter-spacing="3">DEVELOPER · BUILDER · CREATOR</text>
+      <text x="1128" y="46" text-anchor="end" fill="#6F739D" font-size="12" font-weight="700" letter-spacing="1.5">github.com/SpringK1801</text>
+      <text x="600" y="152" text-anchor="middle" fill="#F8FAFF" font-size="64" font-weight="850" letter-spacing="-2.4">Hi, I&apos;m Spring.</text>
+      <rect x="443" y="174" width="314" height="4" rx="2" fill="url(#neon)" filter="url(#glow)"/>
+      <text x="600" y="220" text-anchor="middle" fill="#B8BCE1" font-size="18" font-weight="500">I turn ambitious ideas into playable systems and polished web experiences.</text>
+      <text class="type-line type-0" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Minecraft Mod Developer</text>
+<text class="type-line type-1" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Full-Stack Web Builder</text>
+<text class="type-line type-2" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Game Systems Creator</text>
+<text class="type-line type-3" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Building things that should exist</text>
+      <g class="signal">
+        <circle cx="542" cy="335" r="3" fill="#8B5CF6"/>
+        <circle cx="565" cy="335" r="3" fill="#06B6D4"/>
+        <rect x="585" y="332" width="30" height="6" rx="3" fill="url(#neon)"/>
+        <circle cx="635" cy="335" r="3" fill="#EC4899"/>
+        <circle cx="658" cy="335" r="3" fill="#A3FF12"/>
+      </g>
+</svg>

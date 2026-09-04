@@ -1,0 +1,46 @@
+name: Regenerate profile
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - profile.config.json
+      - profile.config.schema.json
+      - package.json
+      - scripts/**
+      - .github/workflows/generate-profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-generator
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the profile repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Generate README and SVG assets
+        run: npm run build
+
+      - name: Verify generated output
+        run: npm run check
+
+      - name: Commit generated files when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- README.md assets/generated; then
+            echo "Profile is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/generated
+          git commit -m "chore: regenerate profile"
+          git push

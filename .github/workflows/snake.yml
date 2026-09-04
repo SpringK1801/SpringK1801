@@ -1,0 +1,81 @@
+name: Generate contribution snake
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/snake.yml
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - name: Generate light and dark SVGs
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#8B5CF6&color_dots=#EBEDF0,#DDD6FE,#A78BFA,#22D3EE,#EC4899
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#06B6D4&color_dots=#161B22,#3B1F6E,#5B21B6,#06B6D4,#EC4899
+
+      - name: Stage generated SVGs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: contribution-snake
+          path: dist/*.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Download generated SVGs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: contribution-snake
+          path: dist
+
+      - name: Publish generated SVGs to the output branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code origin refs/heads/output >/dev/null 2>&1; then
+            git fetch origin output
+            git switch --force-create output origin/output
+          else
+            git switch --orphan output
+          fi
+
+          git rm -rf --ignore-unmatch .
+          cp dist/*.svg .
+          rm -rf dist
+          git add *.svg
+
+          if git diff --cached --quiet; then
+            echo "Contribution assets are already current."
+            exit 0
+          fi
+
+          git commit -m "chore: update contribution snake"
+          git push origin HEAD:output

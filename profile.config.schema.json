@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SpringK1801 profile configuration",
+  "type": "object",
+  "required": ["profile", "theme", "sections", "skills", "projects", "contact"],
+  "properties": {
+    "profile": {
+      "type": "object",
+      "required": ["username", "name", "heroTitle", "headline", "typingLines", "bio"],
+      "properties": {
+        "username": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "eyebrow": { "type": "string" },
+        "heroTitle": { "type": "string", "minLength": 1 },
+        "headline": { "type": "string", "minLength": 1 },
+        "typingLines": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "bio": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "location": { "type": "string" },
+        "availableForWork": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "theme": {
+      "type": "object",
+      "required": ["preset", "animations"],
+      "properties": {
+        "preset": { "enum": ["neon", "cyberpunk", "purple", "blue", "minimal", "terminal", "minecraft"] },
+        "primaryColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "secondaryColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "accentColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "highlightColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "animations": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "sections": { "type": "object" },
+    "skills": { "type": "object" },
+    "projects": { "type": "object" },
+    "contact": { "type": "object" }
+  },
+  "additionalProperties": true
+}

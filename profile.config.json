@@ -1,0 +1,150 @@
+{
+  "$schema": "./profile.config.schema.json",
+  "profile": {
+    "username": "SpringK1801",
+    "name": "Spring",
+    "eyebrow": "DEVELOPER · BUILDER · CREATOR",
+    "heroTitle": "Hi, I'm Spring.",
+    "headline": "I turn ambitious ideas into playable systems and polished web experiences.",
+    "typingLines": [
+      "Minecraft Mod Developer",
+      "Full-Stack Web Builder",
+      "Game Systems Creator",
+      "Building things that should exist"
+    ],
+    "bio": [
+      "I like projects with moving parts: Minecraft mechanics, modular game systems, full-stack products and interfaces that feel good to use.",
+      "My favorite part is taking an idea from the rough experimental stage all the way to something real, interactive and shippable."
+    ],
+    "location": "",
+    "availableForWork": false
+  },
+  "theme": {
+    "preset": "cyberpunk",
+    "primaryColor": "#8B5CF6",
+    "secondaryColor": "#06B6D4",
+    "accentColor": "#EC4899",
+    "highlightColor": "#A3FF12",
+    "animations": true
+  },
+  "sections": {
+    "order": [
+      "about",
+      "skills",
+      "projects",
+      "activity",
+      "stats",
+      "snake",
+      "contact"
+    ],
+    "visibility": {
+      "about": true,
+      "skills": true,
+      "projects": true,
+      "activity": true,
+      "stats": false,
+      "snake": true,
+      "contact": true
+    }
+  },
+  "focus": [
+    {
+      "label": "GAME SYSTEMS",
+      "title": "Mechanics with depth",
+      "description": "Designing progression, combat, animation and interconnected Minecraft systems."
+    },
+    {
+      "label": "FULL-STACK WEB",
+      "title": "Products, not just pages",
+      "description": "Building responsive interfaces, server logic, data models, auth and secure admin tools."
+    },
+    {
+      "label": "CREATIVE BUILDING",
+      "title": "Ideas into experiences",
+      "description": "Mixing code, interaction and visual polish to make ambitious concepts feel tangible."
+    }
+  ],
+  "skills": {
+    "automatic": false,
+    "hidden": [],
+    "manual": [],
+    "groups": [
+      {
+        "name": "Languages",
+        "items": ["Java", "TypeScript", "JavaScript", "HTML / CSS", "SQL"]
+      },
+      {
+        "name": "Minecraft & Game",
+        "items": ["Fabric", "Forge", "NeoForge", "Mixin", "GeckoLib", "Unity"]
+      },
+      {
+        "name": "Web",
+        "items": ["Next.js", "React", "Tailwind CSS", "Node.js / Express", "Supabase / PostgreSQL", "Three.js"]
+      },
+      {
+        "name": "Tooling & Quality",
+        "items": ["Gradle", "npm", "Git", "Playwright", "Vitest", "Vercel"]
+      }
+    ]
+  },
+  "projects": {
+    "automatic": {
+      "enabled": false,
+      "publicOnly": true
+    },
+    "hidden": [],
+    "featured": [
+      {
+        "visible": true,
+        "owner": "Caravel-Racing",
+        "repo": "CaravelRacing-f1",
+        "name": "Caravel Racing",
+        "icon": "CR",
+        "description": "A public digital home for a STEM Racing team, combining a custom responsive site, interactive experiences and a Node.js backend.",
+        "repositoryUrl": "https://github.com/Caravel-Racing/CaravelRacing-f1",
+        "websiteUrl": "https://caravelracing.com/",
+        "role": "Contributor",
+        "status": "Live",
+        "language": "JavaScript",
+        "tags": ["HTML / CSS", "Node.js", "Express", "Interactive Web"]
+      }
+    ]
+  },
+  "activity": {
+    "title": "What I'm building toward",
+    "items": [
+      "Modular Minecraft systems with stronger architecture, animation and gameplay depth.",
+      "Full-stack web products that connect polished interfaces to real data and secure workflows.",
+      "Interactive 3D and game-like experiences that make the web feel less static."
+    ]
+  },
+  "stats": {
+    "enabled": false,
+    "customImages": []
+  },
+  "snake": {
+    "enabled": true,
+    "branch": "output",
+    "darkFile": "github-contribution-grid-snake-dark.svg",
+    "lightFile": "github-contribution-grid-snake.svg"
+  },
+  "contact": {
+    "github": {
+      "show": true,
+      "label": "@SpringK1801",
+      "url": "https://github.com/SpringK1801"
+    },
+    "email": {
+      "show": false,
+      "address": ""
+    },
+    "website": { "show": false, "label": "Website", "url": "" },
+    "discord": { "show": false, "label": "Discord", "url": "" },
+    "linkedin": { "show": false, "label": "LinkedIn", "url": "" },
+    "x": { "show": false, "label": "X / Twitter", "url": "" },
+    "youtube": { "show": false, "label": "YouTube", "url": "" },
+    "curseforge": { "show": false, "label": "CurseForge", "url": "" },
+    "modrinth": { "show": false, "label": "Modrinth", "url": "" },
+    "other": []
+  }
+}

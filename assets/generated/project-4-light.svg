@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="304" viewBox="0 0 1100 304" role="img" aria-labelledby="title desc">
-  <title id="title">PlayDailyGame project</title>
-  <desc id="desc">PlayDailyGame project</desc>
+  <title id="title">Minecraft Mods project</title>
+  <desc id="desc">Minecraft Mods project</desc>
   <defs>
     
     <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
@@ -30,20 +30,20 @@
       <rect x="2" y="2" width="1096" height="300" rx="24" fill="url(#grid)" opacity="0.45"/>
       <rect x="34" y="42" width="126" height="126" rx="28" fill="#FFFFFF" stroke="#06B6D4" stroke-opacity="0.65"/>
       <rect x="51" y="59" width="92" height="92" rx="20" fill="url(#neon)" opacity="0.15"/>
-      <text x="97" y="123" text-anchor="middle" fill="#18152B" font-size="38" font-weight="900" letter-spacing="-2">PD</text>
+      <text x="97" y="123" text-anchor="middle" fill="#18152B" font-size="38" font-weight="900" letter-spacing="-2">MC</text>
       <text x="198" y="61" fill="#06B6D4" font-size="12" font-weight="800" letter-spacing="2.2">PROJECT</text>
-      <text x="198" y="104" fill="#18152B" font-size="32" font-weight="850">PlayDailyGame</text>
-      <text x="198" y="135" fill="#5E607B" font-size="16">A website with a new game to play every day.</text>
-      <g><rect x="198" y="232" width="110.3" height="34" rx="11" fill="#8B5CF6" opacity="0.14" stroke="#8B5CF6" stroke-opacity="0.6"/><text x="253.15" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Daily Games</text></g>
-<g><rect x="318.3" y="232" width="88" height="34" rx="11" fill="#06B6D4" opacity="0.14" stroke="#06B6D4" stroke-opacity="0.6"/><text x="362.3" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Web App</text></g>
-<g><rect x="416.3" y="232" width="103" height="34" rx="11" fill="#EC4899" opacity="0.14" stroke="#EC4899" stroke-opacity="0.6"/><text x="467.8" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Responsive</text></g>
+      <text x="198" y="104" fill="#18152B" font-size="32" font-weight="850">Minecraft Mods</text>
+      <text x="198" y="135" fill="#5E607B" font-size="16">My Minecraft mods and add-ons, with more than 120K downloads on CurseForge.</text>
+      <g><rect x="198" y="232" width="95.7" height="34" rx="11" fill="#8B5CF6" opacity="0.14" stroke="#8B5CF6" stroke-opacity="0.6"/><text x="245.85" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Minecraft</text></g>
+<g><rect x="303.7" y="232" width="88" height="34" rx="11" fill="#06B6D4" opacity="0.14" stroke="#06B6D4" stroke-opacity="0.6"/><text x="347.7" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Forge</text></g>
+<g><rect x="401.7" y="232" width="88" height="34" rx="11" fill="#EC4899" opacity="0.14" stroke="#EC4899" stroke-opacity="0.6"/><text x="445.7" y="254" text-anchor="middle" fill="#18152B" font-size="12" font-weight="700">Add-ons</text></g>
       <g transform="translate(867,44)">
         <rect width="196" height="42" rx="13" fill="#FFFFFF" stroke="#DCD6F7"/>
         <circle cx="20" cy="21" r="5" fill="#A3FF12"/>
-        <text x="36" y="26" fill="#18152B" font-size="13" font-weight="750">Live</text>
-        <text x="177" y="26" text-anchor="end" fill="#8A89A5" font-size="12">Creator</text>
+        <text x="36" y="26" fill="#18152B" font-size="13" font-weight="750">2 projects</text>
+        <text x="177" y="26" text-anchor="end" fill="#8A89A5" font-size="12">Author</text>
       </g>
       <text x="867" y="236" fill="#8A89A5" font-size="12" font-weight="700" letter-spacing="1.2">DETAILS</text>
-      <text x="867" y="262" fill="#18152B" font-size="17" font-weight="750">Web game</text>
+      <text x="867" y="262" fill="#18152B" font-size="17" font-weight="750">Java mods</text>
       <text class="project-arrow" x="1038" y="266" text-anchor="middle" fill="#EC4899" font-size="30" font-weight="800">→</text>
 </svg>

@@ -82,8 +82,10 @@ function validateConfig(value) {
     if (color && !/^#[0-9A-Fa-f]{6}$/.test(color)) fail(`theme.${colorKey} must be a six-digit hex color`);
   }
   for (const project of value.projects.featured) {
-    if (!project.name || !project.repositoryUrl || !project.description) fail("each featured project needs name, repositoryUrl and description");
-    assertSafeUrl(project.repositoryUrl, "project repositoryUrl");
+    const primaryUrl = project.primaryUrl || project.websiteUrl || project.repositoryUrl;
+    if (!project.name || !primaryUrl || !project.description) fail("each featured project needs name, a public URL and description");
+    assertSafeUrl(primaryUrl, "project primary URL");
+    if (project.repositoryUrl) assertSafeUrl(project.repositoryUrl, "project repositoryUrl");
     if (project.websiteUrl) assertSafeUrl(project.websiteUrl, "project websiteUrl");
   }
 }
@@ -314,12 +316,12 @@ function renderStack(config, theme, mode) {
   return svgDocument({
     width: 1200,
     height,
-    label: "Spring's evidence-backed technology stack",
+    label: "Spring's technology stack",
     defs: commonDefs(theme, mode),
     body: `
       <rect width="1200" height="${height}" rx="26" fill="${colors.background}"/>
       <rect width="1200" height="${height}" rx="26" fill="url(#grid)" opacity="0.5"/>
-      <text x="32" y="46" fill="${colors.faint}" font-size="12" font-weight="800" letter-spacing="3">EVIDENCE-BACKED STACK · EDITABLE IN PROFILE.CONFIG.JSON</text>
+      <text x="32" y="46" fill="${colors.faint}" font-size="12" font-weight="800" letter-spacing="3">TOOLS I USE</text>
       <rect x="963" y="28" width="205" height="3" rx="2" fill="url(#neon)"/>
       ${cards}`
   });
@@ -340,7 +342,7 @@ function renderProject(project, theme, mode) {
   return svgDocument({
     width: 1100,
     height: 304,
-    label: `${project.name} featured project`,
+    label: `${project.name} project`,
     defs: commonDefs(theme, mode),
     styles: theme.animations ? `.project-arrow { animation: nudge 2.4s ease-in-out infinite; } @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(7px); } } @media (prefers-reduced-motion: reduce) { .project-arrow { animation: none; } }` : "",
     body: `
@@ -349,7 +351,7 @@ function renderProject(project, theme, mode) {
       <rect x="34" y="42" width="126" height="126" rx="28" fill="${colors.surface}" stroke="${theme.secondary}" stroke-opacity="0.65"/>
       <rect x="51" y="59" width="92" height="92" rx="20" fill="url(#neon)" opacity="0.15"/>
       <text x="97" y="123" text-anchor="middle" fill="${colors.text}" font-size="38" font-weight="900" letter-spacing="-2">${xml(project.icon || project.name.slice(0, 2).toUpperCase())}</text>
-      <text x="198" y="61" fill="${theme.secondary}" font-size="12" font-weight="800" letter-spacing="2.2">FEATURED PUBLIC BUILD</text>
+      <text x="198" y="61" fill="${theme.secondary}" font-size="12" font-weight="800" letter-spacing="2.2">PROJECT</text>
       <text x="198" y="104" fill="${colors.text}" font-size="32" font-weight="850">${xml(project.name)}</text>
       ${description}
       ${tags}
@@ -359,8 +361,8 @@ function renderProject(project, theme, mode) {
         <text x="36" y="26" fill="${colors.text}" font-size="13" font-weight="750">${xml(project.status || "Public")}</text>
         <text x="177" y="26" text-anchor="end" fill="${colors.faint}" font-size="12">${xml(project.role || "")}</text>
       </g>
-      <text x="867" y="236" fill="${colors.faint}" font-size="12" font-weight="700" letter-spacing="1.2">PRIMARY LANGUAGE</text>
-      <text x="867" y="262" fill="${colors.text}" font-size="17" font-weight="750">${xml(project.language || "Mixed")}</text>
+      <text x="867" y="236" fill="${colors.faint}" font-size="12" font-weight="700" letter-spacing="1.2">DETAILS</text>
+      <text x="867" y="262" fill="${colors.text}" font-size="17" font-weight="750">${xml(project.detail || project.language || "Web project")}</text>
       <text class="project-arrow" x="1038" y="266" text-anchor="middle" fill="${theme.accent}" font-size="30" font-weight="800">→</text>`
   });
 }
@@ -381,8 +383,8 @@ function renderFooter(config, theme, mode) {
       <path d="M28 71 H240 L260 49 L280 91 L303 62 L325 71 H506 L525 56 L545 84 L566 71 H760 L778 53 L798 87 L818 71 H1072" fill="none" stroke="url(#neon)" stroke-width="3" opacity="0.8"/>
       <rect class="scan" x="0" y="28" width="150" height="76" rx="38" fill="url(#neon-soft)"/>
       <rect x="414" y="42" width="272" height="58" rx="18" fill="${colors.surface}" stroke="${colors.grid}"/>
-      <text x="550" y="66" text-anchor="middle" fill="${colors.text}" font-size="14" font-weight="800" letter-spacing="2">BUILD · BREAK · LEARN</text>
-      <text x="550" y="86" text-anchor="middle" fill="${colors.faint}" font-size="12" font-weight="650">THEN BUILD IT BETTER</text>`
+      <text x="550" y="66" text-anchor="middle" fill="${colors.text}" font-size="14" font-weight="800" letter-spacing="2">@${xml(config.profile.username)}</text>
+      <text x="550" y="86" text-anchor="middle" fill="${colors.faint}" font-size="12" font-weight="650">MODS · WEBSITES · GAMES</text>`
   });
 }
 
@@ -423,7 +425,7 @@ ${content}
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/footer-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/generated/footer-light.svg">
-    <img alt="Build, break, learn, then build it better" src="./assets/generated/footer-dark.svg" width="100%">
+    <img alt="${markdown(config.profile.username)} — mods, websites and games" src="./assets/generated/footer-dark.svg" width="100%">
   </picture>
 </div>
 `;
@@ -455,9 +457,7 @@ function renderSkills() {
   <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/stack-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/generated/stack-light.svg">
   <img alt="Languages, Minecraft and game development, web stack, and development tooling" src="./assets/generated/stack-dark.svg" width="100%">
-</picture>
-
-<sub>Only tools supported by repository evidence are shown. The list is explicitly editable in <a href="./profile.config.json">profile.config.json</a>.</sub>`;
+</picture>`;
 }
 
 function renderProjects(config) {
@@ -465,12 +465,17 @@ function renderProjects(config) {
   const projects = config.projects.featured.filter((project) =>
     project.visible !== false &&
     !hidden.has(project.repo) &&
+    !hidden.has(project.primaryUrl) &&
     !hidden.has(project.repositoryUrl)
   );
   if (!projects.length) return "";
   const cards = projects.map((project, index) => {
-    const live = project.websiteUrl ? ` · **[Live site ↗](${project.websiteUrl})**` : "";
-    return `<a href="${project.repositoryUrl}">
+    const primaryUrl = project.primaryUrl || project.websiteUrl || project.repositoryUrl;
+    const primaryLabel = project.primaryLabel || (project.websiteUrl ? "Website" : "View project");
+    const repository = project.repositoryUrl && project.repositoryUrl !== primaryUrl
+      ? ` · **[${markdown(project.repositoryLabel || "Source")} ↗](${project.repositoryUrl})**`
+      : "";
+    return `<a href="${primaryUrl}">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-${index + 1}-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-${index + 1}-light.svg">
@@ -478,7 +483,7 @@ function renderProjects(config) {
   </picture>
 </a>
 
-**[Repository →](${project.repositoryUrl})**${live}`;
+**[${markdown(primaryLabel)} →](${primaryUrl})**${repository}`;
   }).join("\n\n<br>\n\n");
   return `## 03 / Featured project${projects.length === 1 ? "" : "s"}
 
@@ -489,9 +494,7 @@ function renderActivity(config) {
   const items = config.activity.items.map((item) => `- ${markdown(item)}`).join("\n");
   return `## 04 / ${markdown(config.activity.title)}
 
-${items}
-
-> The through-line: make the system interesting, make the interface clear, then keep refining both.`;
+${items}`;
 }
 
 function renderStats(config) {
@@ -518,9 +521,7 @@ function renderSnake(config) {
     <source media="(prefers-color-scheme: light)" srcset="${base}/${config.snake.lightFile}">
     <img alt="Animated contribution graph snake" src="${base}/${config.snake.lightFile}" width="100%">
   </picture>
-</div>
-
-<sub>Generated daily from public contribution data by a least-privilege GitHub Actions workflow.</sub>`;
+</div>`;
 }
 
 function renderContact(config) {
@@ -548,8 +549,6 @@ function renderContact(config) {
 <div align="center">
 
 **${links.join(" &nbsp;·&nbsp; ")}**
-
-<sub>Always building. Usually iterating.</sub>
 
 </div>`;
 }

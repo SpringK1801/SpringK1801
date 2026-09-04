@@ -14,26 +14,26 @@ See CUSTOMIZATION.md for the complete guide.
 
 ## 01 / About
 
-I like projects with moving parts: Minecraft mechanics, modular game systems, full-stack products and interfaces that feel good to use.
+I'm Spring. I make Minecraft mods, websites and small games.
 
-My favorite part is taking an idea from the rough experimental stage all the way to something real, interactive and shippable.
+I built PlayDailyGame, the websites for PROPORTO and Caravel Racing, and Minecraft add-ons with more than 120K downloads on CurseForge.
 
 <table>
 <tr>
 <td width="33%" valign="top">
-<sub>GAME SYSTEMS</sub><br>
-<strong>Mechanics with depth</strong><br><br>
-Designing progression, combat, animation and interconnected Minecraft systems.
+<sub>MINECRAFT MODS</sub><br>
+<strong>Java & modding</strong><br><br>
+Mods and add-ons for Forge, NeoForge and Fabric.
 </td>
 <td width="33%" valign="top">
-<sub>FULL-STACK WEB</sub><br>
-<strong>Products, not just pages</strong><br><br>
-Building responsive interfaces, server logic, data models, auth and secure admin tools.
+<sub>WEBSITES</sub><br>
+<strong>Frontend & backend</strong><br><br>
+Responsive websites, APIs, databases and deployment.
 </td>
 <td width="33%" valign="top">
-<sub>CREATIVE BUILDING</sub><br>
-<strong>Ideas into experiences</strong><br><br>
-Mixing code, interaction and visual polish to make ambitious concepts feel tangible.
+<sub>GAMES</sub><br>
+<strong>Game development</strong><br><br>
+Small web games and Unity projects.
 </td>
 </tr>
 </table>
@@ -46,29 +46,55 @@ Mixing code, interaction and visual polish to make ambitious concepts feel tangi
   <img alt="Languages, Minecraft and game development, web stack, and development tooling" src="./assets/generated/stack-dark.svg" width="100%">
 </picture>
 
-<sub>Only tools supported by repository evidence are shown. The list is explicitly editable in <a href="./profile.config.json">profile.config.json</a>.</sub>
+## 03 / Featured projects
 
-## 03 / Featured project
-
-<a href="https://github.com/Caravel-Racing/CaravelRacing-f1">
+<a href="https://playdailygame.com/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-1-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-1-light.svg">
-    <img alt="Caravel Racing — A public digital home for a STEM Racing team, combining a custom responsive site, interactive experiences and a Node.js backend." src="./assets/generated/project-1-dark.svg" width="100%">
+    <img alt="PlayDailyGame — A website with a new game to play every day." src="./assets/generated/project-1-dark.svg" width="100%">
   </picture>
 </a>
 
-**[Repository →](https://github.com/Caravel-Racing/CaravelRacing-f1)** · **[Live site ↗](https://caravelracing.com/)**
+**[Play →](https://playdailygame.com/)**
 
-## 04 / What I'm building toward
+<br>
 
-- Modular Minecraft systems with stronger architecture, animation and gameplay depth.
-- Full-stack web products that connect polished interfaces to real data and secure workflows.
-- Interactive 3D and game-like experiences that make the web feel less static.
+<a href="https://proporto-website.vercel.app/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-2-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-2-light.svg">
+    <img alt="PROPORTO — The website I built for PROPORTO, a civil engineering company in Porto." src="./assets/generated/project-2-dark.svg" width="100%">
+  </picture>
+</a>
 
-> The through-line: make the system interesting, make the interface clear, then keep refining both.
+**[Visit website →](https://proporto-website.vercel.app/)**
 
-## 05 / Contribution trail
+<br>
+
+<a href="https://caravelracing.com/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-3-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-3-light.svg">
+    <img alt="Caravel Racing — The website I built for Caravel Racing, our STEM Racing team." src="./assets/generated/project-3-dark.svg" width="100%">
+  </picture>
+</a>
+
+**[Visit website →](https://caravelracing.com/)** · **[Source ↗](https://github.com/Caravel-Racing/CaravelRacing-f1)**
+
+<br>
+
+<a href="https://www.curseforge.com/members/springk1801/projects">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/project-4-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/generated/project-4-light.svg">
+    <img alt="Minecraft Mods — My Minecraft mods and add-ons, with more than 120K downloads on CurseForge." src="./assets/generated/project-4-dark.svg" width="100%">
+  </picture>
+</a>
+
+**[View mods →](https://www.curseforge.com/members/springk1801/projects)**
+
+## 04 / Contribution trail
 
 <div align="center">
   <picture>
@@ -78,15 +104,11 @@ Mixing code, interaction and visual polish to make ambitious concepts feel tangi
   </picture>
 </div>
 
-<sub>Generated daily from public contribution data by a least-privilege GitHub Actions workflow.</sub>
-
-## 06 / Connect
+## 05 / Connect
 
 <div align="center">
 
-**[@SpringK1801](https://github.com/SpringK1801)**
-
-<sub>Always building. Usually iterating.</sub>
+**[@SpringK1801](https://github.com/SpringK1801) &nbsp;·&nbsp; [CurseForge Mods](https://www.curseforge.com/members/springk1801/projects)**
 
 </div>
 
@@ -94,6 +116,6 @@ Mixing code, interaction and visual polish to make ambitious concepts feel tangi
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/footer-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/generated/footer-light.svg">
-    <img alt="Build, break, learn, then build it better" src="./assets/generated/footer-dark.svg" width="100%">
+    <img alt="SpringK1801 — mods, websites and games" src="./assets/generated/footer-dark.svg" width="100%">
   </picture>
 </div>

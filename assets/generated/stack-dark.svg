@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="634" viewBox="0 0 1200 634" role="img" aria-labelledby="title desc">
-  <title id="title">Spring&apos;s evidence-backed technology stack</title>
-  <desc id="desc">Spring&apos;s evidence-backed technology stack</desc>
+  <title id="title">Spring&apos;s technology stack</title>
+  <desc id="desc">Spring&apos;s technology stack</desc>
   <defs>
     
     <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
@@ -28,7 +28,7 @@
   
       <rect width="1200" height="634" rx="26" fill="#070816"/>
       <rect width="1200" height="634" rx="26" fill="url(#grid)" opacity="0.5"/>
-      <text x="32" y="46" fill="#6F739D" font-size="12" font-weight="800" letter-spacing="3">EVIDENCE-BACKED STACK · EDITABLE IN PROFILE.CONFIG.JSON</text>
+      <text x="32" y="46" fill="#6F739D" font-size="12" font-weight="800" letter-spacing="3">TOOLS I USE</text>
       <rect x="963" y="28" width="205" height="3" rx="2" fill="url(#neon)"/>
       
       <g>

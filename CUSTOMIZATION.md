@@ -114,28 +114,29 @@ Only list tools you are comfortable claiming publicly.
 Projects render in the order used by `projects.featured`. Each entry supports:
 
 - `visible`: hide or show the card;
-- `owner` and `repo`: repository identity;
+- `owner` and `repo`: optional repository identity;
 - `name` and `icon`: public display values;
 - `description`: custom card copy;
-- `repositoryUrl` and `websiteUrl`;
+- `primaryUrl` and `primaryLabel`: the main card link;
+- `repositoryUrl` and `repositoryLabel`: optional source-code link;
 - `role` and `status`;
-- `language` and `tags`.
+- `detail` and `tags`.
 
 Example:
 
 ```json
 {
   "visible": true,
-  "owner": "SpringK1801",
-  "repo": "my-public-project",
-  "name": "My Public Project",
+  "name": "My Project",
   "icon": "MP",
   "description": "A concise, accurate description.",
+  "primaryUrl": "https://example.com/",
+  "primaryLabel": "Visit website",
   "repositoryUrl": "https://github.com/SpringK1801/my-public-project",
-  "websiteUrl": "https://example.com/",
+  "repositoryLabel": "Source",
   "role": "Creator",
-  "status": "In Development",
-  "language": "TypeScript",
+  "status": "Live",
+  "detail": "Web app",
   "tags": ["Next.js", "Supabase"]
 }
 ```

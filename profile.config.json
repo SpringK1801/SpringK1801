@@ -3,18 +3,18 @@
   "profile": {
     "username": "SpringK1801",
     "name": "Spring",
-    "eyebrow": "DEVELOPER · BUILDER · CREATOR",
-    "heroTitle": "Hi, I'm Spring.",
-    "headline": "I turn ambitious ideas into playable systems and polished web experiences.",
+    "eyebrow": "MINECRAFT MODS · WEBSITES · GAMES",
+    "heroTitle": "Hey, I'm Spring.",
+    "headline": "I make Minecraft mods, websites and games.",
     "typingLines": [
       "Minecraft Mod Developer",
-      "Full-Stack Web Builder",
-      "Game Systems Creator",
-      "Building things that should exist"
+      "Web Developer",
+      "Game Developer",
+      "Creator of PlayDailyGame"
     ],
     "bio": [
-      "I like projects with moving parts: Minecraft mechanics, modular game systems, full-stack products and interfaces that feel good to use.",
-      "My favorite part is taking an idea from the rough experimental stage all the way to something real, interactive and shippable."
+      "I'm Spring. I make Minecraft mods, websites and small games.",
+      "I built PlayDailyGame, the websites for PROPORTO and Caravel Racing, and Minecraft add-ons with more than 120K downloads on CurseForge."
     ],
     "location": "",
     "availableForWork": false
@@ -41,7 +41,7 @@
       "about": true,
       "skills": true,
       "projects": true,
-      "activity": true,
+      "activity": false,
       "stats": false,
       "snake": true,
       "contact": true
@@ -49,19 +49,19 @@
   },
   "focus": [
     {
-      "label": "GAME SYSTEMS",
-      "title": "Mechanics with depth",
-      "description": "Designing progression, combat, animation and interconnected Minecraft systems."
+      "label": "MINECRAFT MODS",
+      "title": "Java & modding",
+      "description": "Mods and add-ons for Forge, NeoForge and Fabric."
     },
     {
-      "label": "FULL-STACK WEB",
-      "title": "Products, not just pages",
-      "description": "Building responsive interfaces, server logic, data models, auth and secure admin tools."
+      "label": "WEBSITES",
+      "title": "Frontend & backend",
+      "description": "Responsive websites, APIs, databases and deployment."
     },
     {
-      "label": "CREATIVE BUILDING",
-      "title": "Ideas into experiences",
-      "description": "Mixing code, interaction and visual polish to make ambitious concepts feel tangible."
+      "label": "GAMES",
+      "title": "Game development",
+      "description": "Small web games and Unity projects."
     }
   ],
   "skills": {
@@ -96,26 +96,64 @@
     "featured": [
       {
         "visible": true,
+        "name": "PlayDailyGame",
+        "icon": "PD",
+        "description": "A website with a new game to play every day.",
+        "primaryUrl": "https://playdailygame.com/",
+        "primaryLabel": "Play",
+        "role": "Creator",
+        "status": "Live",
+        "detail": "Web game",
+        "tags": ["Daily Games", "Web App", "Responsive"]
+      },
+      {
+        "visible": true,
+        "name": "PROPORTO",
+        "icon": "PP",
+        "description": "The website I built for PROPORTO, a civil engineering company in Porto.",
+        "primaryUrl": "https://proporto-website.vercel.app/",
+        "primaryLabel": "Visit website",
+        "role": "Developer",
+        "status": "Live preview",
+        "detail": "Company website",
+        "tags": ["Civil Engineering", "Responsive", "Portuguese"]
+      },
+      {
+        "visible": true,
         "owner": "Caravel-Racing",
         "repo": "CaravelRacing-f1",
         "name": "Caravel Racing",
         "icon": "CR",
-        "description": "A public digital home for a STEM Racing team, combining a custom responsive site, interactive experiences and a Node.js backend.",
+        "description": "The website I built for Caravel Racing, our STEM Racing team.",
+        "primaryUrl": "https://caravelracing.com/",
+        "primaryLabel": "Visit website",
         "repositoryUrl": "https://github.com/Caravel-Racing/CaravelRacing-f1",
-        "websiteUrl": "https://caravelracing.com/",
-        "role": "Contributor",
+        "repositoryLabel": "Source",
+        "role": "Developer",
         "status": "Live",
-        "language": "JavaScript",
+        "detail": "Team website",
         "tags": ["HTML / CSS", "Node.js", "Express", "Interactive Web"]
+      },
+      {
+        "visible": true,
+        "name": "Minecraft Mods",
+        "icon": "MC",
+        "description": "My Minecraft mods and add-ons, with more than 120K downloads on CurseForge.",
+        "primaryUrl": "https://www.curseforge.com/members/springk1801/projects",
+        "primaryLabel": "View mods",
+        "role": "Author",
+        "status": "2 projects",
+        "detail": "Java mods",
+        "tags": ["Minecraft", "Forge", "Add-ons"]
       }
     ]
   },
   "activity": {
-    "title": "What I'm building toward",
+    "title": "What I'm working on",
     "items": [
-      "Modular Minecraft systems with stronger architecture, animation and gameplay depth.",
-      "Full-stack web products that connect polished interfaces to real data and secure workflows.",
-      "Interactive 3D and game-like experiences that make the web feel less static."
+      "Minecraft mods and add-ons.",
+      "Websites and small web games.",
+      "Unity and Three.js projects."
     ]
   },
   "stats": {
@@ -143,7 +181,7 @@
     "linkedin": { "show": false, "label": "LinkedIn", "url": "" },
     "x": { "show": false, "label": "X / Twitter", "url": "" },
     "youtube": { "show": false, "label": "YouTube", "url": "" },
-    "curseforge": { "show": false, "label": "CurseForge", "url": "" },
+    "curseforge": { "show": true, "label": "CurseForge Mods", "url": "https://www.curseforge.com/members/springk1801/projects" },
     "modrinth": { "show": false, "label": "Modrinth", "url": "" },
     "other": []
   }

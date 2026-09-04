@@ -54,15 +54,15 @@
         <rect x="1106" y="68" width="12" height="12" fill="#EC4899"/>
         <rect x="1122" y="84" width="6" height="6" fill="#06B6D4"/>
       </g>
-      <text x="72" y="46" fill="#6F739D" font-size="12" font-weight="800" letter-spacing="3">DEVELOPER · BUILDER · CREATOR</text>
+      <text x="72" y="46" fill="#6F739D" font-size="12" font-weight="800" letter-spacing="3">MINECRAFT MODS · WEBSITES · GAMES</text>
       <text x="1128" y="46" text-anchor="end" fill="#6F739D" font-size="12" font-weight="700" letter-spacing="1.5">github.com/SpringK1801</text>
-      <text x="600" y="152" text-anchor="middle" fill="#F8FAFF" font-size="64" font-weight="850" letter-spacing="-2.4">Hi, I&apos;m Spring.</text>
+      <text x="600" y="152" text-anchor="middle" fill="#F8FAFF" font-size="64" font-weight="850" letter-spacing="-2.4">Hey, I&apos;m Spring.</text>
       <rect x="443" y="174" width="314" height="4" rx="2" fill="url(#neon)" filter="url(#glow)"/>
-      <text x="600" y="220" text-anchor="middle" fill="#B8BCE1" font-size="18" font-weight="500">I turn ambitious ideas into playable systems and polished web experiences.</text>
+      <text x="600" y="220" text-anchor="middle" fill="#B8BCE1" font-size="18" font-weight="500">I make Minecraft mods, websites and games.</text>
       <text class="type-line type-0" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Minecraft Mod Developer</text>
-<text class="type-line type-1" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Full-Stack Web Builder</text>
-<text class="type-line type-2" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Game Systems Creator</text>
-<text class="type-line type-3" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Building things that should exist</text>
+<text class="type-line type-1" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Web Developer</text>
+<text class="type-line type-2" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Game Developer</text>
+<text class="type-line type-3" x="600" y="294" text-anchor="middle" fill="#06B6D4" font-size="24" font-weight="700" letter-spacing="1.3">Creator of PlayDailyGame</text>
       <g class="signal">
         <circle cx="542" cy="335" r="3" fill="#8B5CF6"/>
         <circle cx="565" cy="335" r="3" fill="#06B6D4"/>

@@ -25,7 +25,7 @@ Edit the `profile` object:
 ```json
 "profile": {
   "name": "Spring",
-  "heroTitle": "Hi, I'm Spring.",
+  "heroTitle": "Hey, I'm Spring.",
   "headline": "A short line beneath the hero title.",
   "bio": [
     "First paragraph.",
@@ -44,8 +44,8 @@ Edit `profile.typingLines`. Keep the list short enough to scan easily:
 ```json
 "typingLines": [
   "Minecraft Mod Developer",
-  "Full-Stack Web Builder",
-  "Game Systems Creator"
+  "Web Developer",
+  "Game Developer"
 ]
 ```
 
@@ -146,9 +146,8 @@ or URL to `projects.hidden`; either form suppresses the matching card. Do not
 add private repository names, URLs, descriptions or artwork: the configuration
 itself is public.
 
-`projects.automatic.enabled` is deliberately `false`. The initial selection
-was made from an account audit, then frozen into public configuration so future
-workflow runs never require private-repository access.
+Set `projects.automatic.enabled` to `false` when you want to choose the cards
+yourself.
 
 ## Change the current direction section
 

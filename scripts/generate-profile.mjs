@@ -415,7 +415,7 @@ See CUSTOMIZATION.md for the complete guide.
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/generated/header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/generated/header-light.svg">
-    <img alt="${markdown(config.profile.name)} — developer, builder and creator" src="./assets/generated/header-dark.svg" width="100%">
+    <img alt="${markdown(config.profile.name)}'s GitHub profile" src="./assets/generated/header-dark.svg" width="100%">
   </picture>
 </div>
 

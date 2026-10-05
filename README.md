@@ -16,7 +16,7 @@ See CUSTOMIZATION.md for the complete guide.
 
 I'm Spring. I make Minecraft mods, websites and small games.
 
-I built PlayDailyGame, the websites for PROPORTO and Caravel Racing, and Minecraft add-ons with more than 120K downloads on CurseForge.
+I built PlayDailyGame, the websites for PROPORTO and Caravel Racing, and Minecraft add-ons with more than 500K downloads on CurseForge.
 
 <table>
 <tr>
